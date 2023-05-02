@@ -1,0 +1,16 @@
+stages:
+  - build
+
+buildah-build:
+  stage: build
+  tags:
+    - openshift
+  image: quay.io/buildah/stable
+  variables:
+    STORAGE_DRIVER: vfs
+  script:
+    - export HOME=/tmp
+    - buildah login --username "$CI_REGISTRY_USER" --password "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+    - buildah build -t "$CI_REGISTRY_IMAGE:latest" .
+    - buildah push "$CI_REGISTRY_IMAGE:latest"
+    - buildah logout "$CI_REGISTRY"
