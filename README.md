@@ -1,4 +1,4 @@
-# Companion files for "Creating an Image Build Pipeline with the Certified GitLab Runners Operator and Buildah"
+# Companion files for ["Creating an Image Build Pipeline with the Certified GitLab Runners Operator and Buildah"](./blog_post.md)
 
 Template files for setting up a simple build pipeline for custom Fedora Silverblue images with the GitLab Runners Operator for OpenShift.
 
